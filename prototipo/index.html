@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversa Aberta</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Conversa Aberta</h1>
+    <p>Unindo gerações através da comunicação, feedback e aprendizado mútuo</p>
+  </header>
+
+  <main>
+
+    <section id="chat-section">
+      <h2>Chat Tradutor Geracional</h2>
+      <p class="info-text">Use o botão "Traduzir para minha geração" para entender expressões diferentes.</p>
+      <div id="chat-box" class="chat-box">
+        <div class="chat-message bot"><strong>Mentor:</strong> Bem-vindo! Vamos começar o desafio da semana?</div>
+      </div>
+
+      <div id="chat-input">
+        <input type="text" id="message" placeholder="Digite sua mensagem..." autocomplete="off">
+        <button id="send">Enviar</button>
+        <button id="translate">Traduzir para minha geração</button>
+      </div>
+    </section>
+
+    <section id="feedback-section">
+      <h2>🔁 Feedback Reverso</h2>
+      <p class="info-text">Troca de feedbacks: jovens ensinam tecnologia e veteranos orientam sobre comportamento e decisão.</p>
+
+      <textarea id="feedback-text" placeholder="Digite seu feedback..."></textarea>
+      <select id="feedback-type">
+        <option value="tecnologia">Jovens → Experientes (Tecnologia)</option>
+        <option value="comportamento">Experientes → Jovens (Comportamento e decisões)</option>
+      </select>
+      <button id="submit-feedback">Enviar Feedback</button>
+
+      <div id="feedback-list" class="feedback-list"></div>
+    </section>
+
+    <section id="desafios-section">
+      <h2>Desafios Semanais & Ranking</h2>
+      <p class="info-text">Participe dos desafios e veja como sua equipe está no ranking!</p>
+
+      <div class="buttons-group">
+        <button id="mostrar-desafio">Mostrar Desafio da Semana</button>
+        <button id="mostrar-ranking">Mostrar Ranking</button>
+      </div>
+
+      <div id="desafio-atual" class="desafio-box"></div>
+
+      <table id="ranking-tabela">
+        <thead>
+          <tr>
+            <th>Posição</th>
+            <th>Equipe</th>
+            <th>Pontos</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="cards-container">
+        <div class="card">
+          <h3>Equipes Intergeracionais</h3>
+          <p>Conecte gerações diferentes em desafios colaborativos e produtivos.</p>
+        </div>
+        <div class="card">
+          <h3>Reuniões Colaborativas</h3>
+          <p>Espaços para todos contribuírem igualmente, com ideias e visões diversas.</p>
+        </div>
+        <div class="card">
+          <h3>Mentoria Reversa</h3>
+          <p>Aprenda tecnologia com os jovens e compartilhe experiência com os veteranos.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Conversa Aberta — Projeto Grand Prix SENAI</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
