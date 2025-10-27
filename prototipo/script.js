@@ -3,7 +3,9 @@ const messageInput = document.getElementById("message");
 const sendButton = document.getElementById("send");
 const translateButton = document.getElementById("translate");
 
-const tradutorGeracional = {
+const modoRadios = document.querySelectorAll('input[name="modo"]');
+
+const dicionarioJovem = {
   "cringe": "vergonhoso",
   "flopou": "não deu certo",
   "top": "muito bom",
@@ -27,6 +29,10 @@ const dicionarioSenior = {
   "tudo tranquilo": "de boa",
   "excelente": "brabo"
 };
+
+function modoSelecionado() {
+  return [...modoRadios].find(r => r.checked).value;
+}
 
 sendButton.addEventListener("click", () => {
   const msg = messageInput.value.trim();
@@ -54,20 +60,23 @@ translateButton.addEventListener("click", () => {
 
   let texto = lastMsg.innerText.toLowerCase();
   let traduzido = texto;
+  const modo = modoSelecionado();
 
-  for (const [giria, formal] of Object.entries(tradutorGeracional)) {
-    const regex = new RegExp(`\\b${giria}\\b`, "gi");
-    traduzido = traduzido.replace(regex, formal);
-  }
-
-  for (const [formal, giria] of Object.entries(dicionarioSenior)) {
-    const regex = new RegExp(`\\b${formal}\\b`, "gi");
-    traduzido = traduzido.replace(regex, giria);
+  if (modo === "jovem") {
+    for (const [giria, formal] of Object.entries(dicionarioJovem)) {
+      const regex = new RegExp(`\\b${giria}\\b`, "gi");
+      traduzido = traduzido.replace(regex, formal);
+    }
+  } else if (modo === "senior") {
+    for (const [formal, giria] of Object.entries(dicionarioSenior)) {
+      const regex = new RegExp(`\\b${formal}\\b`, "gi");
+      traduzido = traduzido.replace(regex, giria);
+    }
   }
 
   const traducaoFinal = document.createElement("div");
   traducaoFinal.classList.add("chat-message", "bot");
-  traducaoFinal.innerHTML = `<strong>Tradução:</strong> ${traduzido}`;
+  traducaoFinal.innerHTML = `<strong>Tradução (${modo === "jovem" ? "Jovem → Sênior" : "Sênior → Jovem"}):</strong> ${traduzido}`;
   chatBox.appendChild(traducaoFinal);
   chatBox.scrollTop = chatBox.scrollHeight;
 });
