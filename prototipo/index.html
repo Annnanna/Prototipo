@@ -16,20 +16,26 @@
 
     <section id="chat-section">
       <h2>Chat Tradutor Geracional</h2>
-      <p class="info-text">Use o botão "Traduzir para minha geração" para entender expressões diferentes.</p>
+      <p class="info-text">Escolha o tipo de tradução e use o chat para se comunicar entre gerações.</p>
+
+      <div id="generation-selector">
+        <label><input type="radio" name="modo" value="jovem" checked> Jovem → Sênior</label>
+        <label><input type="radio" name="modo" value="senior"> Sênior → Jovem</label>
+      </div>
+
       <div id="chat-box" class="chat-box">
-        <div class="chat-message bot"><strong>Mentor:</strong> Bem-vindo! Vamos começar o desafio da semana?</div>
+        <div class="chat-message bot"><strong>Mentor:</strong> Bem-vindo! Vamos começar o desafio da semana? 🚀</div>
       </div>
 
       <div id="chat-input">
         <input type="text" id="message" placeholder="Digite sua mensagem..." autocomplete="off">
         <button id="send">Enviar</button>
-        <button id="translate">Traduzir para minha geração</button>
+        <button id="translate">Traduzir</button>
       </div>
     </section>
 
     <section id="feedback-section">
-      <h2>🔁 Feedback Reverso</h2>
+      <h2>Feedback Reverso</h2>
       <p class="info-text">Troca de feedbacks: jovens ensinam tecnologia e veteranos orientam sobre comportamento e decisão.</p>
 
       <textarea id="feedback-text" placeholder="Digite seu feedback..."></textarea>
@@ -63,21 +69,6 @@
         </thead>
         <tbody></tbody>
       </table>
-
-      <div class="cards-container">
-        <div class="card">
-          <h3>Equipes Intergeracionais</h3>
-          <p>Conecte gerações diferentes em desafios colaborativos e produtivos.</p>
-        </div>
-        <div class="card">
-          <h3>Reuniões Colaborativas</h3>
-          <p>Espaços para todos contribuírem igualmente, com ideias e visões diversas.</p>
-        </div>
-        <div class="card">
-          <h3>Mentoria Reversa</h3>
-          <p>Aprenda tecnologia com os jovens e compartilhe experiência com os veteranos.</p>
-        </div>
-      </div>
     </section>
   </main>
 
